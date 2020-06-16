@@ -1,0 +1,28 @@
+<div class="side-bar">
+<div class="col-lg-3">
+<%= render 'users/list', user: @user %>
+<%= render 'books/box', book: @book %>
+</div>
+</div>
+
+
+<div class="col-lg-9">
+<h2>Books</h2>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Opinion</th>
+			<th></th>
+		</tr>
+	</thead>
+	<body>
+    <% @books.each do |book| %>
+        <tr>
+    	<td><%= book.title %></td>
+    	<td><%= book.body %></td>
+        </tr>
+    <% end %>
+    </body>
+</table>
+</div>

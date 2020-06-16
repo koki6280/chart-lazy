@@ -1,0 +1,29 @@
+<div class="side-bar">
+<div class="col-lg-3">
+<%= render 'users/list', user: @user %>
+<%= render 'books/box', book: @book %>
+</div>
+</div>
+
+<div class="col-lg-9">
+<h1>Users</h1>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>image</th>
+			<th>name</th>
+			<th></th>
+		</tr>
+	</thead>
+	<body>
+    <% @users.each do |user| %>
+	<%= user.name %>
+	    <tr>
+		<td><%= user.profile_image %></td>
+		<td><%= user.name %></td>
+		<td><%= link_to 'show', user_path(user.id) %></td>
+	    </tr>
+	    <% end %>
+	</body>
+</table>
+</div>

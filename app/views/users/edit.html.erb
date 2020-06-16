@@ -1,0 +1,12 @@
+<h1>User info</h1>
+<%= form_for(@user) do |f| %>
+<h2>name</h2>
+<%= f.text_field :name %>
+<%= attachment_image_tag @user, :profile_image, :fill, 60, 60 %>
+<h2>image</h2>
+<%= f.attachment_field :profile_image %>
+<h2>introduction</h2>
+<%= f.text_field :introduction %>
+
+<%= f.submit 'UpdateUser' %>
+<% end %>
