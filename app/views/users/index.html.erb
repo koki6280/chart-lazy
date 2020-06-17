@@ -1,29 +1,30 @@
-<div class="side-bar">
-<div class="col-lg-3">
-<%= render 'users/list', user: @user %>
-<%= render 'books/box', book: @book %>
-</div>
-</div>
+<div class="container">
+	<div class="row">
+	      <div class="col-lg-3">
+		       <%= render 'users/list', user: current_user %>
+		       <%= render 'books/box', book: @book %>
+	      </div>
 
-<div class="col-lg-9">
-<h1>Users</h1>
-<table class="table table-striped">
-	<thead>
-		<tr>
-			<th>image</th>
-			<th>name</th>
-			<th></th>
-		</tr>
-	</thead>
-	<body>
-    <% @users.each do |user| %>
-	<%= user.name %>
-	    <tr>
-		<td><%= user.profile_image %></td>
-		<td><%= user.name %></td>
-		<td><%= link_to 'show', user_path(user.id) %></td>
-	    </tr>
-	    <% end %>
-	</body>
-</table>
+        <div class="col-lg-9">
+	         <h1>Users</h1>
+	       <table class="table table-striped">
+		        <thead>
+			            <tr>
+				          <th>image</th>
+				          <th>name</th>
+				          <th></th>
+			            </tr>
+		        </thead>
+		   <tbody>
+		   <% @users.each do |user| %>
+		          <tr>
+					    <td><%= attachment_image_tag user, :profile_image, :fill, 50, 50, format: 'jpeg' %></td>
+					    <td><%= user.name %></td>
+					    <td><%= link_to 'show', user_path(user.id) %></td>
+		          </tr>
+			 <% end %>
+		   </tbody>
+	       </table>
+     </div>
+    </div>
 </div>

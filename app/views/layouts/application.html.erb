@@ -10,23 +10,61 @@
   </head>
 
   <body>
-    <header>
-      <h1 class="title">Bookers</h1>
-      <% if user_signed_in? %>
-      <%= link_to 'Home', user_path(current_user.id) %>
-      <%= link_to 'users', users_path %>
-      <%= link_to 'books', books_path %>
-      <%= link_to "logout", destroy_user_session_path, method: :delete %>
-      <% else %>
-      <%= link_to "home", top_path %>
-      <%= link_to "about", about_path %>
-      <%= link_to "sign up", new_user_registration_path %>
-      <%= link_to "login", new_user_session_path %>
-      <% end %>
+    <header style="background-color: #2f4f4f">
+      <div class="main-title">Bookers</div>
+        <nav>
+          <ul class="nav-list">
+            <% if user_signed_in? %>
+                    <li class="nav-list-item">
+                    <%= link_to user_path(current_user.id) do %>
+                          <span class="glyphicon glyphicon-home" aria-hidden="true">home</span>
+                    <% end %>
+                    </li>
+                    <li class="nav-list-item">
+                    <%= link_to users_path do %>
+                          <span class="glyphicon glyphicon-user" aria-hidden="true">user</span>
+                    <% end %>
+                    </li>
+                    <li class="nav-list-item">
+                    <%= link_to books_path do %>
+                          <span class="glyphicon glyphicon-book" aria-hidden="true">books</span>
+                    <% end %>
+                    </li>
+                    <li class="nav-list-item">
+                    <%= link_to destroy_user_session_path, method: :delete do %>
+                          <span class="glyphicon glyphicon-log-in" aria-hidden="true">logout</span>
+                    <% end %>
+                    </li>
+              <% else %>
+                    <li class="nav-list-item">
+                    <%= link_to top_path do %>
+                          <span class="glyphicon glyphicon-home" aria-hidden="true">home</span>
+                    <% end %>
+                    </li>
+                    <li class="nav-list-item">
+                    <%= link_to about_path do %>
+                          <span class="glyphicon glyphicon-link" aria-hidden="true">about</span>
+                    <% end %>
+                    </li>
+                    <li class="nav-list-item">
+                    <%= link_to new_user_registration_path do %>
+                          <span class="glyphicon glyphicon-edit" aria-hidden="true">sign up</span>
+                    <% end %>
+                    </li>
+                    <li class="nav-list-item">
+                    <%= link_to new_user_session_path do %>
+                         <span class="glyphicon glyphicon-log-in" aria-hidden="true"> login</span>
+                    <% end %>
+                    </li>
+            <% end %>
+          </ul>
+        </nav>
     </header>
     <%= yield %>
     <main class="clearfix"></main>
-    <footer><p>CopyRight Infratop.inc</p></footer>
+    <footer>
+      <div class="footer-text">CopyRight Infratop.inc</div>
+    </footer>
   </body>
 </html>
 

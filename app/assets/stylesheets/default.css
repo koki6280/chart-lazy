@@ -1,0 +1,35 @@
+.main-title {
+	font-size: 25px;
+	padding-top: 10px;
+	padding-left: 100px;
+	color: #ffffff;
+}
+
+.text {
+	text-align: center;
+}
+
+.nav-list {
+    text-align: right;
+    padding: 10px 0;
+    margin: 0 auto;
+}
+
+.nav-list-item {
+	list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    font-size: 15px;
+}
+
+.main-text {
+	margin-top: 50px;
+	width: 40%;
+	margin: 0 auto;
+}
+
+.footer-text {
+	text-align: right;
+	padding-right: 150px;
+	margin-top: 100px;
+}

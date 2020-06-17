@@ -1,10 +1,11 @@
 <h2>New Book</h2>
   <%= form_for(book) do |f| %>
+  <%= render 'layouts/error', model: f.object %>
     <h2>Title</h2>
     <%= f.text_field :title %>
 
     <h2>Opinion</h2>
     <%= f.text_area :body %>
-    <%= f.submit 'Create Book' %>
+    <span class="label label-primary"><%= f.submit 'Create Book' %></span>
 
  <% end %>
