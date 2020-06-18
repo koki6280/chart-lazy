@@ -1,20 +1,22 @@
 <% if flash[:notice] %>
 <%= flash[:notice] %>
 <% end %>
+
 <% if flash.now[:alert] %>
 <p><%= flash.now[:alert] %></p>
 <% end %>
 
 <h1>User info</h1>
-<%= form_for(@user) do |f| %>
-<%= render 'layouts/error', model: f.object %>
+	<%= form_for(@user) do |f| %>
+	<%= render 'layouts/error', model: f.object %>
 
 <h2>name</h2>
-<%= f.text_field :name %>
-<h2>image</h2>
-<%= f.attachment_field :profile_image %>
-<h2>introduction</h2>
-<%= f.text_field :introduction %>
+	<%= f.text_field :name %>
 
-<%= f.submit 'Update User' %>
+<h2>image</h2>
+	<%= f.attachment_field :profile_image %>
+
+<h2>introduction</h2>
+	<%= f.text_field :introduction %>
+	<%= f.submit 'Update User' %>
 <% end %>

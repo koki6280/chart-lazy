@@ -2,18 +2,18 @@
 <p><%= flash.now[:alert] %></p>
 <% end %>
 <div class="submit-area">
-<h1>Editing Book</h1>
-<%= form_for(@book) do |f| %>
-<%= render 'layouts/error', model: f.object %>
+	<h1>Editing Book</h1>
+		<%= form_for(@book) do |f| %>
+		<%= render 'layouts/error', model: f.object %>
 
-	<h4>Title</h4>
-	<%= f.text_field :title %>
+			<h4>Title</h4>
+			<%= f.text_field :title %>
 
-    <h4>Opinion</h4>
-    <%= f.text_area :body %>
-    <%= f.submit 'Update Book', class: "btn btn-primary" %>
-<% end %>
+		    <h4>Opinion</h4>
+		    <%= f.text_area :body %>
+		    <%= f.submit 'Update Book', class: "btn btn-primary btn-block" %>
+		<% end %>
 
-<%= link_to 'Show', book_path(@book.id) %>
-<%= link_to 'Back', books_path %>
+	<%= link_to 'Show', book_path(@book.id) %>
+	<%= link_to 'Back', books_path %>
 </div>

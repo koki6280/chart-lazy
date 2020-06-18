@@ -8,22 +8,22 @@
         <div class="col-xs-9">
 	         <h1>Users</h1>
 	       <table class="table table-striped">
-		        <thead>
-			            <tr>
-				          <th>image</th>
-				          <th>name</th>
-				          <th></th>
-			            </tr>
-		        </thead>
-		   <tbody>
-		   <% @users.each do |user| %>
-		          <tr>
-					    <td><%= attachment_image_tag user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "l_e_others_471.png", size: '50x50' %></td>
-					    <td><%= user.name %></td>
-					    <td><%= link_to 'Show', user_path(user.id) %></td>
-		          </tr>
-			 <% end %>
-		   </tbody>
+			       <thead>
+				            <tr>
+					          <th>image</th>
+					          <th>name</th>
+					          <th></th>
+				            </tr>
+			       </thead>
+					   <tbody>
+							   <% @users.each do |user| %>
+							          <tr>
+										    <td><%= attachment_image_tag user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "l_e_others_471.png", size: '50x50' %></td>
+										    <td><%= user.name %></td>
+										    <td><%= link_to 'Show', user_path(user.id) %></td>
+							          </tr>
+								 <% end %>
+					   </tbody>
 	       </table>
      </div>
     </div>
