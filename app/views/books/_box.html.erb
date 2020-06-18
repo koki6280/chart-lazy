@@ -1,4 +1,4 @@
-<h2>New Book</h2>
+<h2>New book</h2>
   <%= form_for(book) do |f| %>
   <%= render 'layouts/error', model: f.object %>
     <h2>Title</h2>
@@ -6,6 +6,6 @@
 
     <h2>Opinion</h2>
     <%= f.text_area :body %>
-    <span class="label label-primary"><%= f.submit 'Create Book' %></span>
+    <%= f.submit 'Create Book', class: "btn btn-primary" %>
 
  <% end %>

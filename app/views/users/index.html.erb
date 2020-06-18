@@ -1,11 +1,11 @@
 <div class="container">
 	<div class="row">
-	      <div class="col-lg-3">
+	      <div class="col-xs-3">
 		       <%= render 'users/list', user: current_user %>
 		       <%= render 'books/box', book: @book %>
 	      </div>
 
-        <div class="col-lg-9">
+        <div class="col-xs-9">
 	         <h1>Users</h1>
 	       <table class="table table-striped">
 		        <thead>
@@ -18,9 +18,9 @@
 		   <tbody>
 		   <% @users.each do |user| %>
 		          <tr>
-					    <td><%= attachment_image_tag user, :profile_image, :fill, 50, 50, format: 'jpeg' %></td>
+					    <td><%= attachment_image_tag user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "l_e_others_471.png", size: '50x50' %></td>
 					    <td><%= user.name %></td>
-					    <td><%= link_to 'show', user_path(user.id) %></td>
+					    <td><%= link_to 'Show', user_path(user.id) %></td>
 		          </tr>
 			 <% end %>
 		   </tbody>

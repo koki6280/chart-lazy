@@ -7,13 +7,13 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-lg-3">
+        <div class="col-xs-3">
         <%= render 'users/list', user: current_user %>
         <%= render 'books/box', book: @book %>
         </div>
 
 
-      <div class="col-lg-9">
+      <div class="col-xs-9">
        <h2>Books</h2>
                 <table class="table tablt-striped">
                 	<thead>
@@ -28,7 +28,7 @@
                         <tr>
                         <td>
                             <%= link_to user_path(book.user.id) do %>
-                               <%= attachment_image_tag book.user, :profile_image, :fill, 50, 50, format: 'jpeg' %>
+                                     <%= attachment_image_tag book.user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "l_e_others_471.png", size: '50x50' %>
                             <% end %>
                         </td>
                     	<td><%= link_to book.title, book_path(book.id) %></td>

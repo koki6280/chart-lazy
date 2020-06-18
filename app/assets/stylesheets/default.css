@@ -28,6 +28,20 @@
 	margin: 0 auto;
 }
 
+.about-text {
+	margin-top: 50px;
+	margin-left: 100px;
+}
+
+.submit-area {
+	margin-top: 50px;
+	margin-left: 130px;
+}
+
+.col-xs-12 {
+	width: 100%;
+}
+
 .footer-text {
 	text-align: right;
 	padding-right: 150px;
