@@ -1,11 +1,13 @@
 <h2>New book</h2>
   <%= form_for(book) do |f| %>
-  <%= render 'layouts/error', model: f.object %>
-    <h2>Title</h2>
-    <%= f.text_field :title %>
+	    <%= render 'layouts/error', model: f.object %>
+	    <h2>Title</h2>
+	    <input class="col-xs-12 book_title" type="text" name="book[title]" id="book_title">
 
-    <h2>Opinion</h2>
-    <%= f.text_area :body %>
-    <%= f.submit 'Create Book', class: "btn btn-primary btn-block" %>
+	    <h2>Opinion</h2>
+	        <textarea class="col-xs-12" type="text" name="book[body]"></textarea>
+	        
+
+	        <%= f.submit 'Create Book', class: "btn btn-primary btn-block create_book" %>
 
  <% end %>
